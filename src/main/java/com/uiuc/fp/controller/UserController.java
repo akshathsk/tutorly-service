@@ -15,7 +15,7 @@ public class UserController {
   UserService userService;
 
   @RequestMapping("user")
-  public @ResponseBody ResponseEntity<String> example() {
+  public @ResponseBody ResponseEntity<String> getUsers() {
     return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
   }
 
