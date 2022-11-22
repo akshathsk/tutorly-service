@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -24,15 +26,15 @@ public class UserSlots {
 
   @Getter
   @Setter
-  String date;
+  Date slotDate;
 
   @Getter
   @Setter
-  String startTime;
+  Date startTime;
 
   @Getter
   @Setter
-  String endTime;
+  Date endTime;
 
   @Getter
   @Setter

@@ -16,7 +16,7 @@ public class User {
 
   @Getter
   @Setter
-  String name;
+  String userName;
 
   @Setter
   @Getter
@@ -28,7 +28,7 @@ public class User {
 
   @Getter
   @Setter
-  String degree;
+  String userDegree;
 
   @Getter
   @Setter
