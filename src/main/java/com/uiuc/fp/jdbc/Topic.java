@@ -20,7 +20,7 @@ public class Topic {
 
   @Getter
   @Setter
-  String name;
+  String topicName;
 
   @Getter
   @Setter

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.uiuc</groupId>
-	<artifactId>fp</artifactId>
+	<artifactId>fp-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>fp</name>
+	<name>fp-service</name>
 	<description>CS 409 BE Service</description>
 	<properties>
 		<java.version>1.8</java.version>

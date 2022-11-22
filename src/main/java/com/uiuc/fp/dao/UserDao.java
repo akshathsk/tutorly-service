@@ -20,7 +20,7 @@ public class UserDao {
     jdbcTemplate.query(
                     "SELECT * FROM User", new Object[]{},
                     (rs, rowNum) -> new User(rs.getLong("user_id"),
-                            rs.getString("name"),
+                            rs.getString("user_name"),
                             rs.getString("email"),
                             rs.getString("university"),
                             rs.getString("degree"),
