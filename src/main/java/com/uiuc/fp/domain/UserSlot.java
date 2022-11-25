@@ -16,9 +16,12 @@ public class UserSlot {
   private Long slotId;
 
   @OneToOne
-  private User userId;
+  @JoinColumn(name = "user_id")
+  private User user;
 
-  private Long topicId;
+  @ManyToOne
+  @JoinColumn(name = "topic_id")
+  private Topic topic;
 
   @Temporal(TemporalType.DATE)
   private Date slotDate;
@@ -31,7 +34,8 @@ public class UserSlot {
 
   private Boolean isBooked;
 
-  @ManyToOne
-  @JoinColumn(name="booked_by_user_id")
+  @OneToOne
+  @JoinColumn(name = "booked_by_user_id")
   private User bookedByUser;
+
 }
