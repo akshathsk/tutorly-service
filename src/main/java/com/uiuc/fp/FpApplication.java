@@ -1,6 +1,6 @@
 package com.uiuc.fp;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -10,9 +10,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.metamodel.Type;
 
 @SpringBootApplication
+@AllArgsConstructor
 public class FpApplication {
 
-  @Autowired
   private EntityManager entityManager;
 
   public static void main(String[] args) {

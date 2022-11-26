@@ -15,7 +15,7 @@ public class UserSlot {
   @Id
   private Long slotId;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "user_id")
   private User user;
 
@@ -34,7 +34,7 @@ public class UserSlot {
 
   private Boolean isBooked;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "booked_by_user_id")
   private User bookedByUser;
 

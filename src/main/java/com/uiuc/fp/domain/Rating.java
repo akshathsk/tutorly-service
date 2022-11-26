@@ -14,15 +14,15 @@ public class Rating {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long ratingId;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "user_id")
   private User user;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "tutor_id")
   private User tutor;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "topic_id")
   private Topic topic;
 
