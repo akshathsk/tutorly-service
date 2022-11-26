@@ -3,6 +3,7 @@ package com.uiuc.fp.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,5 +16,9 @@ public class Tag {
   private Long tagId;
 
   private String tagName;
+
+  @ManyToMany
+  @JoinTable(name = "topic_tags")
+  private List<Topic> topics;
 
 }

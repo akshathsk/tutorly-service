@@ -15,16 +15,19 @@ public class Rating {
   private Long ratingId;
 
   @ManyToOne
-  @JoinColumn(name="user_id")
-  private User userId;
+  @JoinColumn(name = "user_id")
+  private User user;
 
   @ManyToOne
-  @JoinColumn(name="tutor_id")
-  private User tutorId;
+  @JoinColumn(name = "tutor_id")
+  private User tutor;
 
-  private Long topicId;
+  @ManyToOne
+  @JoinColumn(name = "topic_id")
+  private Topic topic;
 
   private String description;
 
   private Double rating;
+
 }

@@ -1,6 +1,7 @@
 package com.uiuc.fp.domain;
 
 import lombok.*;
+
 import javax.persistence.*;
 
 @NoArgsConstructor
@@ -14,8 +15,9 @@ public class Wallet {
   private Long walletId;
 
   @OneToOne
-  @JoinColumn(name="user_id")
-  private User userId;
+  @JoinColumn(name = "user_id")
+  private User user;
 
   private Double credit;
+
 }

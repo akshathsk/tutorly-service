@@ -26,4 +26,5 @@ public class User {
   private String userDegree;
 
   private String phoneNumber;
+
 }

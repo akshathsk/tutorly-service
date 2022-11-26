@@ -3,7 +3,6 @@ package com.uiuc.fp.domain;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,8 +15,8 @@ public class Topic {
   private Long topicId;
 
   @ManyToOne
-  @JoinColumn(name="user_id")
-  private User userId;
+  @JoinColumn(name = "user_id")
+  private User user;
 
   private String topicName;
 
@@ -29,7 +28,4 @@ public class Topic {
 
   private Double overallRating;
 
-  @ManyToMany
-  @JoinTable(name = "topic_tags")
-  private List<Tag> tags;
 }
