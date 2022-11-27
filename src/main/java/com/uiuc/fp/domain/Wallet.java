@@ -1,8 +1,8 @@
 package com.uiuc.fp.domain;
 
 import lombok.*;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,6 +18,7 @@ public class Wallet {
   @JoinColumn(name = "user_id")
   private User user;
 
+  @NotNull(message = "Credit time cannot be empty")
   private Double credit;
 
 }

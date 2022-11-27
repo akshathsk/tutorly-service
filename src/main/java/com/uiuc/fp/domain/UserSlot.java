@@ -1,13 +1,17 @@
 package com.uiuc.fp.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.uiuc.fp.domain.event.UserSlotEventHandler;
 import lombok.*;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.time.LocalTime;
 import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@EntityListeners(UserSlotEventHandler.class)
 @Entity
 public class UserSlot {
 
@@ -23,14 +27,17 @@ public class UserSlot {
   @JoinColumn(name = "topic_id")
   private Topic topic;
 
+  @NotNull
   @Temporal(TemporalType.DATE)
   private Date slotDate;
 
-  @Temporal(TemporalType.TIME)
-  private Date startTime;
+  @NotNull
+  @JsonFormat(pattern = "HH:mm:ss")
+  private LocalTime startTime;
 
-  @Temporal(TemporalType.TIME)
-  private Date endTime;
+  @NotNull(message = "End time cannot be empty")
+  @JsonFormat(pattern = "HH:mm:ss")
+  private LocalTime endTime;
 
   private Boolean isBooked;
 
