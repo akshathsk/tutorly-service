@@ -1,8 +1,10 @@
 package com.uiuc.fp.domain;
 
 import lombok.*;
-
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,6 +30,9 @@ public class Rating {
 
   private String description;
 
+  @NotNull(message = "Rating cannot be empty")
+  @Min(1)
+  @Max(5)
   private Double rating;
 
 }
