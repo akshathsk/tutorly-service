@@ -30,8 +30,8 @@ public class Topic {
 
   private Double experienceLevel;
 
-  @Min(1)
-  @Max(5)
+  @Min(value = 1, message = "Please provide a value greater than 1")
+  @Max(value = 5, message = "Please provide a value less than 5")
   private Double overallRating;
 
 }

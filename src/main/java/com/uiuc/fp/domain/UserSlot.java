@@ -27,11 +27,11 @@ public class UserSlot {
   @JoinColumn(name = "topic_id")
   private Topic topic;
 
-  @NotNull
+  @NotNull(message = "Slot Date cannot be empty")
   @Temporal(TemporalType.DATE)
   private Date slotDate;
 
-  @NotNull
+  @NotNull(message = "Start time cannot be empty")
   @JsonFormat(pattern = "HH:mm:ss")
   private LocalTime startTime;
 
