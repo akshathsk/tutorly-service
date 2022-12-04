@@ -5,12 +5,13 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-public class Topic {
+public class Topic implements Serializable {
 
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Id

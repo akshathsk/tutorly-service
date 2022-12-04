@@ -1,4 +1,4 @@
-package com.uiuc.fp.domain.interceptor.dto;
+package com.uiuc.fp.interceptor.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -3,12 +3,13 @@ package com.uiuc.fp.domain;
 import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-public class Wallet {
+public class Wallet implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
