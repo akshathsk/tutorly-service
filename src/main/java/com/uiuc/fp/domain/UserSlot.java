@@ -1,10 +1,10 @@
 package com.uiuc.fp.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.uiuc.fp.domain.event.UserSlotEventHandler;
+import com.uiuc.fp.event.UserSlotEventHandler;
 import lombok.*;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -13,7 +13,7 @@ import java.util.Date;
 @Data
 @EntityListeners(UserSlotEventHandler.class)
 @Entity
-public class UserSlot {
+public class UserSlot implements Serializable {
 
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Id
@@ -27,15 +27,12 @@ public class UserSlot {
   @JoinColumn(name = "topic_id")
   private Topic topic;
 
-  @NotNull(message = "Slot Date cannot be empty")
   @Temporal(TemporalType.DATE)
   private Date slotDate;
 
-  @NotNull(message = "Start time cannot be empty")
   @JsonFormat(pattern = "HH:mm:ss")
   private LocalTime startTime;
 
-  @NotNull(message = "End time cannot be empty")
   @JsonFormat(pattern = "HH:mm:ss")
   private LocalTime endTime;
 

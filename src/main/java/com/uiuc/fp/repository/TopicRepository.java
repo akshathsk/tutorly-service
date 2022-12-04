@@ -1,4 +1,4 @@
-package com.uiuc.fp.repositories;
+package com.uiuc.fp.repository;
 
 import com.uiuc.fp.domain.Topic;
 import org.springframework.data.repository.CrudRepository;

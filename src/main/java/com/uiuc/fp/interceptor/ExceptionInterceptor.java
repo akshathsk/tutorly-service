@@ -1,6 +1,6 @@
-package com.uiuc.fp.domain.interceptor;
+package com.uiuc.fp.interceptor;
 
-import com.uiuc.fp.domain.interceptor.dto.ExceptionDto;
+import com.uiuc.fp.interceptor.dto.ExceptionDto;
 import com.uiuc.fp.exception.ValidationException;
 
 import javax.validation.ConstraintViolation;

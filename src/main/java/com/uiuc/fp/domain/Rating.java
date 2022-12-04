@@ -1,16 +1,19 @@
 package com.uiuc.fp.domain;
 
+import com.uiuc.fp.event.RatingEventHandler;
 import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@EntityListeners(RatingEventHandler.class)
 @Entity
-public class Rating {
+public class Rating implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
