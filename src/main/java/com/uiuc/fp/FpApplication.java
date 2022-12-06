@@ -5,12 +5,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.persistence.EntityManager;
 import javax.persistence.metamodel.Type;
 
 @SpringBootApplication
 @AllArgsConstructor
+@EnableScheduling
 public class FpApplication {
 
   private EntityManager entityManager;
