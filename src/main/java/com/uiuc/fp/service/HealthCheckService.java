@@ -18,12 +18,12 @@ public class HealthCheckService {
   @Value("${cron.enable}")
   private boolean cronEnable;
 
-  @Scheduled(cron = "*/10 * * * *")
+  @Scheduled(cron = "0 */10 * * * ?")
   public void cronJobSch() {
 
     if(cronEnable) {
       HttpStatus status = RestClient.get(String.join("/", baseUrl, "healthCheck"));
-      log.info("HealthCheck : " + status);
+      log.info("Health check : " + status);
     }
     
   }
