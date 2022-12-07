@@ -1,4 +1,4 @@
-package com.uiuc.fp.services;
+package com.uiuc.fp.service;
 
 import com.uiuc.fp.util.client.RestClient;
 import lombok.extern.slf4j.Slf4j;
@@ -7,8 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Component
 @Slf4j
@@ -20,7 +18,7 @@ public class HealthCheckService {
   @Value("${cron.enable}")
   private boolean cronEnable;
 
-  @Scheduled(cron = "0/30 * * * * ?")
+  @Scheduled(cron = "*/10 * * * *")
   public void cronJobSch() {
 
     if(cronEnable) {
