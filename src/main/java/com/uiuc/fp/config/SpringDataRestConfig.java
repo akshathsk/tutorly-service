@@ -13,9 +13,7 @@ public class SpringDataRestConfig
     public void configureRepositoryRestConfiguration(
             RepositoryRestConfiguration config, CorsRegistry cors) {
 
-        cors.addMapping("/*")
-                .allowedOrigins("*")
-                .allowedMethods("GET", "PUT", "DELETE", "PATCH", "POST")
-                .allowCredentials(false).maxAge(3600);
+        cors.addMapping("/**")
+                .allowedOrigins("*");
     }
 }
