@@ -77,7 +77,7 @@ public class UserSlotEventHandler {
   private void sendSlotBookedEmail(UserSlot userSlot) {
     try {
       EmailDetails details = new EmailDetails();
-      details.setSubject("[AppName] : Your session has been confirmed!");
+      details.setSubject("[Tutorly] : Your session has been confirmed!");
       details.setMsgBody(emailService.getSlotBookingEmailContent(userSlot));
       details.setRecipient(userSlot.getBookedByUser().getEmail() + "," + userSlot.getUser().getEmail());
       emailService.sendMail(details);
