@@ -1,10 +1,12 @@
 package com.uiuc.fp.controllers;
 
 import com.uiuc.fp.service.TagService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 public class TagController {
 
   private final TagService tagService;
