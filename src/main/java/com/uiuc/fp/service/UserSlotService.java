@@ -1,6 +1,8 @@
 package com.uiuc.fp.service;
 
+import com.uiuc.fp.domain.User;
 import com.uiuc.fp.domain.UserSlot;
+import com.uiuc.fp.repository.UserSlotRepository;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -11,8 +13,11 @@ public class UserSlotService {
 
   private final WalletService walletService;
 
-  public UserSlotService(@Lazy WalletService walletService) {
+  private final UserSlotRepository userSlotRepository;
+
+  public UserSlotService(@Lazy WalletService walletService, @Lazy UserSlotRepository userSlotRepository) {
     this.walletService = walletService;
+    this.userSlotRepository = userSlotRepository;
   }
 
 
@@ -30,4 +35,10 @@ public class UserSlotService {
 
   }
 
+  public Object getUserSlotByUserId(Long userId) {
+
+    User user = new User();
+    user.setUserId(userId);
+    return userSlotRepository.findAllByUserIs(user);
+  }
 }

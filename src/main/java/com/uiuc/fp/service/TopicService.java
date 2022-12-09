@@ -28,4 +28,8 @@ public class TopicService {
     topicRepository.save(topic);
 
   }
+
+  public Object getTopic(Long id) {
+    return topicRepository.findById(id).get();
+  }
 }
