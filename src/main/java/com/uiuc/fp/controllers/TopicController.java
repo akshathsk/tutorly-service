@@ -22,4 +22,10 @@ public class TopicController {
   {
     return topicService.getTopic(id);
   }
+
+  @GetMapping("/v2/topics/user/{userId}")
+  Object getTopicByUser(@PathVariable Long userId)
+  {
+    return topicService.getTopicByUser(userId);
+  }
 }
