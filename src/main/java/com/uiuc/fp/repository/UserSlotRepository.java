@@ -9,4 +9,6 @@ import java.util.List;
 public interface UserSlotRepository extends CrudRepository<UserSlot, Long> {
 
   List<UserSlot> findAllByUserIs(User user);
+
+  List<UserSlot> findAllByBookedByUserIs(User user);
 }
