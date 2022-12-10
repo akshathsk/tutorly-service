@@ -22,4 +22,10 @@ public class UserSlotController {
   {
     return userSlotService.getUserSlotByUserId(userId);
   }
+
+  @GetMapping("/v2/userSlots/booked/{userId}")
+  Object getUserSlotBookedBy(@PathVariable Long userId)
+  {
+    return userSlotService.getUserSlotBookedBy(userId);
+  }
 }

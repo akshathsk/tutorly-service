@@ -36,9 +36,14 @@ public class UserSlotService {
   }
 
   public Object getUserSlotByUserId(Long userId) {
-
     User user = new User();
     user.setUserId(userId);
     return userSlotRepository.findAllByUserIs(user);
+  }
+
+  public Object getUserSlotBookedBy(Long userId) {
+    User user = new User();
+    user.setUserId(userId);
+    return userSlotRepository.findAllByBookedByUserIs(user);
   }
 }
