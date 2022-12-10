@@ -1,6 +1,7 @@
 package com.uiuc.fp.service;
 
 import com.uiuc.fp.domain.Topic;
+import com.uiuc.fp.domain.User;
 import com.uiuc.fp.exception.ValidationException;
 import com.uiuc.fp.repository.TopicRepository;
 import org.springframework.context.annotation.Lazy;
@@ -31,5 +32,11 @@ public class TopicService {
 
   public Object getTopic(Long id) {
     return topicRepository.findById(id).get();
+  }
+
+  public Object getTopicByUser(Long userId) {
+    User user = new User();
+    user.setUserId(userId);
+    return topicRepository.findAllByUserIs(user);
   }
 }
