@@ -1,5 +1,6 @@
 package com.uiuc.fp.service;
 
+import com.uiuc.fp.domain.User;
 import com.uiuc.fp.domain.UserSlot;
 import com.uiuc.fp.domain.Wallet;
 import com.uiuc.fp.exception.ValidationException;
@@ -44,5 +45,11 @@ public class WalletService {
     });
     walletRepository.saveAll(wallets);
 
+  }
+
+  public Object getWalletForUser(Long userId) {
+    User user = new User();
+    user.setUserId(userId);
+    return walletRepository.findByUser(user);
   }
 }
