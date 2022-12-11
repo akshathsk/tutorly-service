@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class UserSlotService {
 
@@ -45,5 +48,12 @@ public class UserSlotService {
     User user = new User();
     user.setUserId(userId);
     return userSlotRepository.findAllByBookedByUserIs(user);
+  }
+
+  public Object getAvailableUserSlots(Long userId) {
+    User user = new User();
+    user.setUserId(userId);
+    List<UserSlot> topicList = userSlotRepository.findAllByUserIs(user);
+    return topicList.stream().filter(x -> !x.getIsBooked()).collect(Collectors.toList());
   }
 }
