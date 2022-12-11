@@ -31,8 +31,8 @@ public class Topic implements Serializable {
 
   private Double experienceLevel;
 
-  @Min(value = 1, message = "Please provide a value greater than 1")
-  @Max(value = 5, message = "Please provide a value less than 5")
+  @Min(value = 1, message = "Please provide a value in range 1-5")
+  @Max(value = 5, message = "Please provide a value in range 1-5")
   private Double overallRating;
 
 }
