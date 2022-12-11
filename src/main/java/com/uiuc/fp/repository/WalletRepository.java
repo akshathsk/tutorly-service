@@ -12,4 +12,5 @@ public interface WalletRepository extends CrudRepository<Wallet, Long> {
 
   Wallet findByUser(User user);
 
+  Wallet findByUser_UserId(Long userId);
 }
