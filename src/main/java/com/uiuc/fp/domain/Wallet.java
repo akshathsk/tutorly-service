@@ -19,7 +19,7 @@ public class Wallet implements Serializable {
   @JoinColumn(name = "user_id")
   private User user;
 
-  @NotNull(message = "Credit time cannot be empty")
+  @NotNull(message = "Credit cannot be empty")
   private Double credit;
 
 }
