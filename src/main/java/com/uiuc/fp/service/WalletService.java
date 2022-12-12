@@ -38,10 +38,10 @@ public class WalletService {
     List<Wallet> wallets = walletRepository.findByUserIn(Arrays.asList(userSlot.getBookedByUser(), userSlot.getUser()));
 
     wallets.forEach(wallet -> {
-      if (wallet.getUser().getUserId() == userSlot.getBookedByUser().getUserId()) {
+      if (wallet.getUser().getUserId().longValue() == userSlot.getBookedByUser().getUserId().longValue()) {
         // Student wallet
         wallet.setCredit(wallet.getCredit() - userSlot.getTopic().getCreditPerHr());
-      } else if (wallet.getUser().getUserId() == userSlot.getUser().getUserId()) {
+      } else if (wallet.getUser().getUserId().longValue() == userSlot.getUser().getUserId().longValue()) {
         // Tutor wallet
         wallet.setCredit(wallet.getCredit() + userSlot.getTopic().getCreditPerHr());
       }
