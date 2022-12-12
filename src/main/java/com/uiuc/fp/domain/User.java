@@ -1,7 +1,12 @@
 package com.uiuc.fp.domain;
 
-import lombok.*;
+import com.uiuc.fp.event.UserEventHandler;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +17,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@EntityListeners(UserEventHandler.class)
 @Entity
 public class User implements Serializable {
 

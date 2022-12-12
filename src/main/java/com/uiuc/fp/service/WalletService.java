@@ -7,6 +7,8 @@ import com.uiuc.fp.exception.ValidationException;
 import com.uiuc.fp.repository.WalletRepository;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.List;
 @Service
 public class WalletService {
 
+  public static final double DEFAULT_CREDIT = 100D;
   private final WalletRepository walletRepository;
 
   public WalletService(@Lazy WalletRepository walletRepository) {
@@ -51,5 +54,15 @@ public class WalletService {
     User user = new User();
     user.setUserId(userId);
     return walletRepository.findByUser(user);
+  }
+
+  @Transactional(propagation = Propagation.REQUIRES_NEW)
+  public Object saveDefaultWalletForUser(User user) {
+
+    Wallet wallet = new Wallet();
+    wallet.setCredit(DEFAULT_CREDIT);
+    wallet.setUser(user);
+
+    return walletRepository.save(wallet);
   }
 }
